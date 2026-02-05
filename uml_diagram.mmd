@@ -1,0 +1,29 @@
+classDiagram
+    class Amount {
+        - amount: float
+        - timestamp: datetime
+        - transaction_type: str
+        + __init__(amount, transaction_type)
+        + __str__()
+    }
+
+    class PersonalAccount {
+        - account_number: int
+        - account_holder: str
+        - balance: float
+        - transactions: list
+        + __init__(account_number, account_holder)
+        + deposit(amount)
+        + withdraw(amount)
+        + print_transaction_history()
+        + get_balance()
+        + get_account_number()
+        + set_account_number(account_number)
+        + get_account_holder()
+        + set_account_holder(account_holder)
+        + __str__()
+        + __add__(amount)
+        + __sub__(amount)
+    }
+
+    PersonalAccount "1" --> "*" Amount
